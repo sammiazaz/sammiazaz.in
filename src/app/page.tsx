@@ -13,7 +13,7 @@ function FlipPill({ cards }: { cards: CardData[] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div
-      className="flex items-center gap-2 px-4 py-4 rounded-xl border border-white/8 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 cursor-pointer select-none flip-pill-container"
+      className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-3.5 rounded-xl border border-white/8 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 cursor-pointer select-none flip-pill-container max-w-full overflow-x-auto no-scrollbar"
       style={{
         borderColor: hovered ? 'rgba(255,255,255,0.4)' : undefined,
         backgroundColor: hovered ? 'rgba(39,39,42,0.8)' : undefined,
@@ -26,12 +26,12 @@ function FlipPill({ cards }: { cards: CardData[] }) {
         <a key={i} href={href} target={href.startsWith('http') ? '_blank' : undefined}
           rel="noopener noreferrer" onClick={e => { if (href === '#') e.preventDefault(); }}
           style={{ perspective: '800px' }}>
-          <span className="relative flex items-center justify-center w-12 h-12"
+          <span className="relative flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12"
             style={{ transformStyle: 'preserve-3d', transform: hovered ? 'rotateX(180deg)' : 'rotateX(0deg)',
               transition: 'transform 0.65s cubic-bezier(0.4, 0, 0.2, 1)', transitionDelay: `${i * 80}ms` }}>
-            <span className="absolute inset-0 flex items-center justify-center rounded-xl border border-white/8 bg-[#111111] text-zinc-300 font-mono font-bold text-base flip-pill-letter"
+            <span className="absolute inset-0 flex items-center justify-center rounded-xl border border-white/8 bg-[#111111] text-zinc-300 font-mono font-bold text-xs sm:text-sm md:text-base flip-pill-letter"
               style={{ backfaceVisibility: 'hidden' }}>{letter}</span>
-            <span className="absolute inset-0 flex items-center justify-center rounded-xl bg-[#EF4444] text-white flip-pill-letter"
+            <span className="absolute inset-0 flex items-center justify-center rounded-xl bg-[#EF4444] text-white flip-pill-letter text-xs sm:text-base"
               style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)',
                 boxShadow: hovered ? '0 0 16px rgba(239,68,68,0.4)' : 'none', transition: 'box-shadow 0.3s ease' }}>
               {icon}
@@ -144,13 +144,13 @@ export default function Home() {
             <span className="text-white font-medium">applied machine learning systems</span>.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-10 w-full sm:w-auto px-4 sm:px-0">
             <Link href="/resume"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl text-white text-label font-bold cursor-pointer hero-cta hero-primary-cta">
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white text-label font-bold cursor-pointer hero-cta hero-primary-cta">
               <FileText size={14} /> View Resume
             </Link>
             <a href="mailto:sammiazaz2005@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-transparent text-label text-zinc-300 hover:bg-white/5 hover:border-white/20 cursor-pointer hero-cta hero-secondary-cta">
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-transparent text-label text-zinc-300 hover:bg-white/5 hover:border-white/20 cursor-pointer hero-cta hero-secondary-cta">
               <Mail size={14} /> Get In Touch
             </a>
           </div>
@@ -217,8 +217,8 @@ export default function Home() {
               </div>
             </TiltCard>
 
-            <TiltCard withAnimatedBorder className="md:col-span-2 relative bg-[#111111] border border-white/5 rounded-3xl p-8 md:p-10 overflow-hidden min-h-[300px] flex flex-col justify-center transition-colors duration-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group w-full">
-              <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-12 relative z-10 h-full w-full">
+            <TiltCard withAnimatedBorder className="md:col-span-2 relative bg-[#111111] border border-white/5 rounded-3xl p-5 sm:p-8 md:p-10 overflow-hidden min-h-[300px] flex flex-col justify-center transition-colors duration-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group w-full">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12 relative z-10 h-full w-full">
                 <div className="w-full md:w-auto self-start">
                   <p className="text-label text-zinc-500 font-mono mb-4">TRANSCRIPT REF : 24A12RES897</p>
                   <div className="flex items-center gap-3 mb-6">
@@ -284,7 +284,7 @@ export default function Home() {
           </div>
 
           {/* Platform Tabs */}
-          <div className="flex overflow-x-auto gap-2 mb-8 border-b border-[#1F1F1F]" role="tablist">
+          <div className="flex overflow-x-auto gap-2 mb-8 border-b border-[#1F1F1F] -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar" role="tablist">
             {Object.values(platformsData).map((p) => {
               const isActive = activeTab === p.id;
               return (
@@ -303,7 +303,7 @@ export default function Home() {
           </div>
 
           {/* Analytics Container */}
-          <div className="bg-[#111111] border border-[#1F1F1F] rounded-2xl p-8 lg:p-10 relative overflow-hidden transition-all duration-500 mb-8">
+          <div className="bg-[#111111] border border-[#1F1F1F] rounded-2xl p-4 sm:p-6 lg:p-10 relative overflow-hidden transition-all duration-500 mb-8">
             {activeTab === 'overall' ? (
               <div className="animate-in fade-in duration-500">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 gap-6">

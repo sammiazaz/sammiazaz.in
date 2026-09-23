@@ -133,7 +133,7 @@ export default function ProjectsPage() {
 
         {/* Featured Full Width Project */}
         <div className="mb-8">
-          <TiltCard withAnimatedBorder className="bg-[#111111] border border-white/5 rounded-3xl p-6 lg:p-10 relative overflow-hidden transition-colors duration-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group w-full">
+          <TiltCard withAnimatedBorder className="bg-[#111111] border border-white/5 rounded-3xl p-5 sm:p-6 lg:p-10 relative overflow-hidden transition-colors duration-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               
               {/* Left Content */}

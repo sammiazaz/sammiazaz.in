@@ -100,7 +100,7 @@ export default function ResumePage() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-3 self-start md:self-auto flex-shrink-0 pt-2">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 self-start md:self-auto flex-shrink-0 pt-2">
             <a
               href="/resume.pdf"
               download="Sammi_Azaz_Resume.pdf"
@@ -206,7 +206,7 @@ export default function ResumePage() {
                 key={row.category}
                 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 p-3.5 rounded-xl bg-transparent border border-white/5 hover:border-white/10 transition-colors"
               >
-                <span className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 w-48 flex-shrink-0">
+                <span className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 w-full sm:w-48 flex-shrink-0">
                   {row.category}
                 </span>
                 <span className="text-xs md:text-sm font-medium text-zinc-200 leading-relaxed">
@@ -428,13 +428,13 @@ export default function ResumePage() {
 
             <div className="relative z-10 w-full max-w-4xl h-[90vh] bg-[#111111] border border-white/10 rounded-2xl flex flex-col overflow-hidden shadow-2xl">
               {/* Modal Top Bar */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.02]">
-                <div className="flex items-center gap-2 text-xs font-mono text-zinc-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>Sammi Azaz Resume.pdf</span>
+              <div className="flex items-center justify-between px-3 sm:px-5 py-2.5 sm:py-3 border-b border-white/10 bg-white/[0.02]">
+                <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 truncate max-w-[140px] sm:max-w-none">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
+                  <span className="truncate">Sammi Azaz Resume.pdf</span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                   <a
                     href="/resume.pdf"
                     download="Sammi_Azaz_Resume.pdf"

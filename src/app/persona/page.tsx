@@ -95,7 +95,7 @@ export default function PersonaPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 border-t border-white/5 pt-6">
                 <div className="bg-[#161616] border border-white/5 rounded-lg p-3">
                   <span className="block text-label text-zinc-500 mb-1">TIMELINE</span>
                   <span className="text-body font-bold text-white tracking-tight">2023–2027</span>

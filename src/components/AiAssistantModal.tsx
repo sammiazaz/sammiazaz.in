@@ -68,7 +68,7 @@ export default function AiAssistantModal({ isOpen, onClose }: AiAssistantModalPr
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-md">
           {/* Backdrop Click */}
           <div className="absolute inset-0" onClick={onClose} />
 
@@ -81,7 +81,7 @@ export default function AiAssistantModal({ isOpen, onClose }: AiAssistantModalPr
             style={{ borderRadius: isCyanPill ? '24px' : '16px' }}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/[0.02]">
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-white/10 bg-white/[0.02]">
               <div className="flex items-center gap-3">
                 <div
                   className="w-9 h-9 flex items-center justify-center shadow-lg"

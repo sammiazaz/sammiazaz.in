@@ -386,6 +386,22 @@ body {
   padding-bottom: 2rem;
 }
 
+@media (max-width: 640px) {
+  .page-container {
+    width: calc(100% - 32px);
+  }
+}
+
+/* Touch-friendly horizontal scroll without ugly scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 .text-display {
   font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 700;
