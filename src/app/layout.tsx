@@ -46,7 +46,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CodeGlyphBackground />
           <Navbar />
-          <main className="pt-[var(--navbar-height)] relative z-10">
+          <main className="pt-[var(--navbar-height)] pb-20 sm:pb-24 lg:pb-0 relative z-10">
             {children}
           </main>
         </ThemeProvider>
